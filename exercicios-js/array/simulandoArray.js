@@ -5,7 +5,7 @@ Object.defineProperty(quaseArray, 'toString',{
     enumerable: false
 })
 
-console.log(quaseArray[0])
+console.log(quaseArray[0])//não é valido acessar por quasearray.0
 
 const meuArray = ['Rafael', 'Ana', 'Bia']
 console.log(quaseArray.toString(), meuArray)
