@@ -1,0 +1,43 @@
+Notas da aula 124 arquivo package.json
+
+package.json é o arquivo que possui as informações do projeto { nome, descrição, versão, arquivo principal (index.js), palavras chaves, autor e licenças} e as dependências do projeto.
+
+O arquivo package-lock.json é o que sobe para o repositório de versão, pois tem descrição mais completa
+
+para criá-lo digitar no terminal: npm init ou npm init -y para opções padrões.
+
+O arquivo será gerado onde estiver no diretório. Para saber digitar pwd. Ele mostra o caminho
+
+Para instalar no arquivo package.json uma dependência, digitar por exemplo a dependência axios: comando npm -i --save axios.
+Resultado: acrescenta a notação
+"dependencies": {
+    "axios": "^0.18.0"
+  }
+  se tiver o ^ ele atualiza para próxima versão~. só as versões 18.qualquer
+  se tiver o ~ não atualiza
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+
+  comando: npm i --save-dev axios@0.17.1 -E
+  OU
+  npm install --save-dev axios@0.17.1 -E
+
+  instala a versão 0.17.1 somente para desenvolvimento. -E instala a versão exata
+
+  Arquivo da aula: caminho: 
+  https://files.cod3r.com.br/curso-js/funcionarios.json
+
+  O axios faz requisições HTTP
+
+Para recriar dependencias a partir do package.json pelo terminal, dentro da pasta onde se quer instalar a dependência digitar npm i. Instalará o que tive de dependencias
+
+
+  Scripts em package.json
+
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+    no terminal digitar a linha npm nomedoscript
+    se tiver algum script com nome que não é padrão , utilizar o comando npm run nomedoscript
