@@ -2,24 +2,15 @@
   "name": "funcionarios",
   "version": "1.0.0",
   "description": "",
-<<<<<<< HEAD
   "main": "funcionarios.js",
   "scripts": {
     "start": "nodemon",
-=======
-  "main": "index.js",
-  "scripts": {
->>>>>>> 65a6426a0f19850740358de5cd77e0d7244455b8
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-<<<<<<< HEAD
   "license": "ISC",
   "dependencies": {
     "axios": "0.18.0"
   }
-=======
-  "license": "ISC"
->>>>>>> 65a6426a0f19850740358de5cd77e0d7244455b8
 }
