@@ -1,4 +1,4 @@
-//let e cont
+//let e const
 {
     var a = 2 // não tem escopo de bloco
     let b = 3 //escopo de bloco
