@@ -1,0 +1,11 @@
+instalar:
+    npm install http-server -g 
+
+iniciar
+    http-server .
+
+iniciar sem cache:
+    http-server -c-1 .
+
+para parar: 
+    CTRL-C
