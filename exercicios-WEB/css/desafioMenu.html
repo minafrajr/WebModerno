@@ -97,6 +97,17 @@
                 display: none;
             }
         }
+        @media(max-width:680px){
+            .menu{
+                display: none;
+            }
+        }
+
+        @media(max-width:910px){
+            .autenticacao{
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -133,7 +144,15 @@
     </header>
 
     <script>
-        // ...
+       window.onhashchange = function(e){
+           const oldUrl = e.oldURL.split('#')[1]
+           const newUrl = e.newURL.split('#')[1]
+           console.log(oldUrl,newUrl)
+           const oldLink = document.querySelector(`.menu a[href='#${oldUrl}']`)
+           const newLink = document.querySelector(`.menu a[href='#${newUrl}']`)
+           oldLink && oldLink.classList.remove('selected')
+           newLink && newLink.classList.add('selected')
+       }
     </script>
 </body>
 
