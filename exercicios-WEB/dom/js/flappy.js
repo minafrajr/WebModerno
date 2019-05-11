@@ -57,7 +57,7 @@ function Barreiras(altura, largura, abertura, espaco, notificarPonto) {
 
   const deslocamento = 3
   this.animar = () => {
-    this.pares.array.forEach(par => {
+    this.pares.forEach(par => {
       par.setX(par.getX() - deslocamento)
 
       //quando o elemento sair da tela do jogo
@@ -74,6 +74,25 @@ function Barreiras(altura, largura, abertura, espaco, notificarPonto) {
   }
 }
 
+function Passaro(alturaJogo) {
+  let voando = false
+  this.elemento = novoElemetno('img', 'passaro')
+  this.elemento.src = 'imgs/passaro.png'
+
+  this.getY = () => parseInt(this.elemento.style.bottom.split('px')[0])
+  this.setY = y => (this.elemento.style.bottom = `${y}px`)
+
+  window.onkeydown = e => (voando = true)
+  window.onkeyup = e => (voando = false)
+
+  this.animar = () => {
+    const novoY = this.getY() + (voando ? 8 : -5)
+  }
+}
+
 const barreiras = new Barreiras(700, 1200, 200, 400)
 const areaDoJogo = document.querySelector('[wm-flappy]')
 barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
+setInterval(() => {
+  barreiras.animar()
+}, 40)
