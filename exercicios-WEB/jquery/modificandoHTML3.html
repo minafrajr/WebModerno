@@ -13,13 +13,47 @@
     <div id='conteudo'></div>
 
     <script>
-        const pessoas = [
-            { nome: 'Ana', nota: 9.1 },
-            { nome: 'Bianca', nota: 8.4 },
-            { nome: 'Carlos', nota: 7.6 },
-            { nome: 'Julia', nota: 9.7 }
-        ]
-        
-        // ...
+        // const alunos = [
+        //     { nome: 'Ana', nota: 9.1 },
+        //     { nome: 'Bianca', nota: 8.4 },
+        //     { nome: 'Carlos', nota: 7.6 },
+        //     { nome: 'Julia', nota: 9.7 }
+        // ]
+
+        // // const table = $('<table></table>')
+        // // const row = $('<tr></tr>')
+        // // $('#conteudo').html(table)
+        // // $(table).html($(row))
+
+        // // alunos.forEach(aluno => {
+        // //     // $(row).append(`<td>${aluno.nome}</td>`)
+        // //     // $(row).append(`<td>${aluno.nota}</td>`)
+        // //     // $(table).append($(row).append(`<tr></tr>`))
+        // //     const dta = $(`<td>${aluno.nome}</td><td>${aluno.nota}</td>`)
+        // //     $(row).append($(dta))
+        // //     $(table).append($(row))
+        // // });
+
+        //$(document).ready(function(){})
+        $(function () {
+            const alunos = [
+                { nome: 'Ana', nota: 9.1 },
+                { nome: 'Bianca', nota: 8.4 },
+                { nome: 'Carlos', nota: 7.6 },
+                { nome: 'Julia', nota: 9.7 }
+            ]
+            const linhas = alunos.map(aluno => {
+                const tdNome = $('<td>').html(aluno.nome)
+                const tdNota = $('<td>').html(aluno.nota)
+                // return $('<tr>').append(tdNome).append(tdNota)
+                return $('<tr>').append(tdNome, tdNota)
+            })
+
+            // $('#conteudo').append($('<table>').html(linhas).css('border', 'solid 5px'))
+
+            const tabela = $('<table>').append(linhas).css('border', 'solid 5px')
+            $('#conteudo').append(tabela)
+        })
+
     </script>
 </body>
