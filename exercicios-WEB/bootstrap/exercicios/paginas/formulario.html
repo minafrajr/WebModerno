@@ -20,21 +20,101 @@
 </p>
 
 <!-- Formulário -->
-<div>
-  <div class="mg-5 accordion">
-    <div class="card">
-      <div class="card-header">
-        <h5 class="mb-0">
-          Exemplo de Formulário
-        </h5>
-      </div>
-      <div class="card-body">
-        <fomr class="container-fluid">
-          <div class="form-row">
-            
+
+<div class="card">
+  <div class="card-header">
+    <h5 class="mb-0">
+      Exemplo de Formulário
+    </h5>
+  </div>
+  <div class="card-body">
+    <form action="" class="container-fluid">
+      <div class="form-row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nome"
+              placeholder="informe o nome"
+            />
           </div>
-        </fomr>
+        </div>
       </div>
-    </div>
+      <div class="form-row">
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <lable for="email">Email</lable>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="informe o seu email"
+              />
+            </div>
+            <small class="form-text form-muted">
+              Enviaremos um email para confimaro cadastro.
+            </small>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="form-row">
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <label for="LinguagemPreferida">Linguagem</label>
+            <select id="linguagemPreferida" class="form-control">
+              <option value="">Selecione</option>
+              <option>JS</option>
+              <option>Python</option>
+              <option>C#</option>
+              <option>Java</option>
+              <option>Ruby</option>
+              <option>Outra</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="form-row">
+        <div class="col-12">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="defaultCheck1"
+            />
+            <label class="form-check-label" for="defaultCheck1">
+              Default checkbox
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="defaultCheck2"
+              disabled
+            />
+            <label class="form-check-label" for="defaultCheck2">
+              Disabled checkbox
+            </label>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="form-row mb-0">
+        <div class="col-12 d-flex justify-content-end">
+          <button class="btn btn-primary mr-2" type="submit">Salvar</button>
+          <button class="btn btn-secondary" type="reset">Cancelar</button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
