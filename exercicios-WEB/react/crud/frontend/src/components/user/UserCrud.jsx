@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Main from '../template/Main';
 import axios from 'axios';
+import UserTable from './UserTable';
 
 const headerProps = {
   icon: 'users',
@@ -16,6 +17,10 @@ const initialState = {
 };
 
 export default class UserCrud extends Component {
+  constructor() {
+    super();
+  }
+
   state = { ...initialState };
 
   componentWillMount() {
@@ -44,21 +49,23 @@ export default class UserCrud extends Component {
     if (add) list.unshift(user);
     return list;
   }
+
   updateField(event) {
     const user = { ...this.state.user };
     user[event.target.name] = event.target.value;
     this.setState({ user });
   }
 
-  load(user) {
+  load = (user) => {
     this.setState({ user });
-  }
-  remove(user) {
+  };
+
+  remove = (user) => {
     axios.delete(`${baseUrl}/${user.id}`).then((resp) => {
       const list = this.getUpdatedList(user, false);
       this.setState({ list });
     });
-  }
+  };
   renderTable() {
     return (
       <table className="table mt-4">
@@ -75,30 +82,36 @@ export default class UserCrud extends Component {
     );
   }
   renderRows() {
-    return this.state.list.map((user) => {
-      return (
-        <tr key={user.id}>
-          <td> {user.id}</td>
-          <td> {user.name}</td>
-          <td> {user.email}</td>
-          <td>
-            <button className="btn btn-primary" onClick={() => this.load(user)}>
-              <i className="fa fa-pencil"></i>
-            </button>
-            <button
-              className="btn btn-danger ml-2"
-              onClick={() => this.remove(user)}
-            >
-              <i className="fa fa-trash"></i>
-            </button>
-          </td>
-        </tr>
-      );
-    });
+    return this.state.list
+      .sort((a, b) => {
+        return a.id > b.id;
+      })
+      .map((user) => {
+        return (
+          <tr key={user.id}>
+            <td> {user.id}</td>
+            <td> {user.name}</td>
+            <td> {user.email}</td>
+            <td>
+              <button
+                className="btn btn-primary"
+                onClick={() => this.load(user)}
+              >
+                <i className="fa fa-pencil"></i>
+              </button>
+              <button
+                className="btn btn-danger ml-2"
+                onClick={() => this.remove(user)}
+              >
+                <i className="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        );
+      });
   }
 
   renderForm() {
-    console.log(this.state.list);
     return (
       <div className="form">
         <div className="row">
@@ -151,7 +164,12 @@ export default class UserCrud extends Component {
     return (
       <Main {...headerProps}>
         {this.renderForm()}
-        {this.renderTable()}
+        {/* {this.renderTable()} */}
+        <UserTable
+          list={this.state.list}
+          onDelete={this.remove}
+          onLoad={this.load}
+        />
       </Main>
     );
   }
