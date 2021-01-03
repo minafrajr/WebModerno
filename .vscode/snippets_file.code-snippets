@@ -20,5 +20,9 @@
     "prefix": "clg",
     "body": ["console.log($1)", "$2"],
     "description": "Console.log..."
+  },
+  "Vue constructor": {
+    "prefix": "vue",
+    "body": ["new Vue({", "el:$1,", "data:{", "$2", "}", "})"]
   }
 }
