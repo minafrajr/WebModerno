@@ -31,8 +31,8 @@ export default {
 
 <style>
 .calculator {
-  height: 320px;
-  width: 235;
+  height: 420px;
+  width: 335px;
   border-radius: 5px;
   overflow: hidden;
   display: grid;

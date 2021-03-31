@@ -21,6 +21,7 @@ export default {
   --border-button: solid 1px #888;
 }
 .button {
+  text-align: center;
   font-size: 1.4em;
   background-color: var(--bg-button);
   border: none;
