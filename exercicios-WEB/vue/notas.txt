@@ -1,0 +1,32 @@
+//instalar o vue
+npm install vue
+
+//instalar o vue-cli
+yarn global add @vue/cli
+npm i -g @vue/cli
+
+//para atualizar
+npm i -g @vue/cli
+
+vue create "nome do projeto"
+
+
+
+//para executar a aplicação
+yarn serve
+
+//no main.js inicializar 
+
+new Vue({
+  el: '#app',
+  render(createElement) {
+    return createElement(App);
+  },
+})
+
+// ou assim
+
+
+new Vue({
+    render: h=>h(App)
+}).$mount("#app")
