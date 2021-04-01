@@ -3,7 +3,7 @@
 </template>
 
 <script>
-export default { prop: ['value'] };
+export default { props: ['value'] };
 </script>
 
 <style>
@@ -15,7 +15,7 @@ export default { prop: ['value'] };
   justify-content: flex-end;
   align-items: center;
   padding: 20px;
-  font-size: 2.1rem;
+  font-size: 2.2em;
 
   overflow: hidden;
 }

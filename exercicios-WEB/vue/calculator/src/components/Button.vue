@@ -1,5 +1,9 @@
 <template>
-  <button class="button" :class="{ double, triple, operation }">
+  <button
+    class="button"
+    @click="$emit('onClick', label)"
+    :class="{ double, triple, operation }"
+  >
     {{ label }}
   </button>
 </template>
@@ -22,7 +26,7 @@ export default {
 }
 .button {
   text-align: center;
-  font-size: 1.4em;
+  font-size: 2.4rem;
   background-color: var(--bg-button);
   border: none;
   border-right: var(--bg-button);
