@@ -30,3 +30,11 @@ new Vue({
 new Vue({
     render: h=>h(App)
 }).$mount("#app")
+
+@click//evento click do componente
+
+@click.stop //impede que possa ser executado novamente
+
+<Gift v-if="isOpen && hasGift" /> // v-if exibe o componente conforme uma condição
+
+<div v-for="i in doorsAmount" :key="i"> // exibe quantas vezes for o componente baseado no índice i de uma variável

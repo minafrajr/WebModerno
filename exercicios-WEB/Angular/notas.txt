@@ -1,0 +1,8 @@
+Angular (ng)
+
+//instalação da CLI
+npm i -g @angular/CLI
+
+//create the app
+ng new meu-app
+
