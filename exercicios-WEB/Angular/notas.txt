@@ -6,3 +6,7 @@ npm i -g @angular/CLI
 //create the app
 ng new meu-app
 
+//instalação Material Design
+ng generate component caminho/nome
+ng g c
+//exemplo: ng g c components/template/header

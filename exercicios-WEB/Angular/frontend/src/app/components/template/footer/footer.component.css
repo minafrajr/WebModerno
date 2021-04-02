@@ -1,0 +1,13 @@
+.footer {
+	/* deixa no fundo  */
+	position: fixed;
+	bottom: 0;
+
+	display: flex;
+	justify-content: flex-end;
+}
+
+.footer > span {
+	font-weight: 300;
+	font-size: 0.8rem;
+}
