@@ -118,3 +118,6 @@ export class ProductService{
 |-@ngModule
 |
 |-
+:::::::::: Schematics ::::::::::
+https://material.angular.io/guide/schematics
+ng generate @angular/material:table <component-name>
