@@ -10,3 +10,111 @@ ng new meu-app
 ng generate component caminho/nome
 ng g c
 //exemplo: ng g c components/template/header
+
+::::::::::Diretivas::::::::::::
+Podem ser de estilos ou estruturais
+As de estilo alteram o component quando invocadas
+exemplo
+
+//Diretiva de estilo
+@Directive({
+      selector: '[appRed]'
+})
+export clasRedirective{
+      constructor(el: ElementRef){
+            el.nativeElement.style.color = '#e35e6b
+      }
+}
+A chamada da diretiva é feita assim:
+
+<i class="material-icon v-middle" appRed>
+   favorite 
+</i>
+
+
+//Diretiva Estrutural
+<form *ngIf="porduct" class="product-form">
+</form>
+
+<ul>
+      <li *ngFor"let product of products>
+            {{product.name}}
+      </li>
+</ul>
+
+:::::::::: Binding ::::::::::
+//preenche uma tabela com um array de produtos definido no componente
+<table [datasource] = "produtcs"> </table>
+
+
+:::::::::: One Way Data Binding ::::::::::
+<input [value]="nome"/>
+//pega o valor da string nome do componente
+
+
+:::::::::: Two Way Data Binding ::::::::::
+<input [(ngModel)]="nome"/>
+//pega o valor da string nome do componente e também define a variável
+
+:::::::::: Routes ::::::::::
+ <a routerLink ="/products"> Produtos</a>
+const routes: Routes =[{
+      path:"products",
+      component: ProductCrudCpmponent
+      },
+      {
+        path:"produtcs/create",
+        component:ProductCreateComponent
+      }
+}]
+
+//utilização
+<mat-sidenav-content>
+      <router-outlet></router-outlet>
+</mat-sidenav-content>
+
+:::::::::: Pipes ::::::::::
+<p>
+      O vencimento do produto é {{product.vencimento | date}}
+</p>
+<p>
+      O vencimento do produto é {{product.vencimento | date: 'fullDate | uppercase}}
+</p>
+
+<td mat-cell *matCellDef="let product">
+      O preço do produto é {{product.price | current:'BRL'}}
+</p>
+
+::::::::::Observables::::::::::
+//Semelhantes às promisses
+
+criarNoBackend(produto: Produto): Observable<Produto>{
+      return this.http.post<Produto>(this.url, produto);
+}
+
+CriarProduto():void{
+      this.criarNoBackend(this.produto).subscribe(()=> {
+            this.exibirMensgem("Salvo com sucesso!");
+      });
+}
+
+
+:::::::::: Services ::::::::::
+Classes para compartilhar códigos. Organizam o código separando as responsabilidades
+das lógicas que não são de responsabilidades do componente
+
+//para criar
+ng g s services/product
+
+@Injectable({
+      provideIn:"root",
+})
+export class ProductService{
+      //o código aqui
+}
+
+:::::::::: Injeção de dependência ::::::::::
+|
+|-@ngModule
+|
+|-
