@@ -8,7 +8,7 @@
     {
       "id": 2,
       "name": "Notebook Mac Pro",
-      "price": 7025.23
+      "price": "6025.23"
     },
     {
       "id": 3,
@@ -32,13 +32,18 @@
     },
     {
       "name": "Notebook",
-      "price": "4578,20",
+      "price": "4578.20",
       "id": 7
     },
     {
       "name": "pasta",
-      "price": "5,00",
+      "price": "5.00",
       "id": 8
+    },
+    {
+      "name": "borracha",
+      "price": "1.00",
+      "id": 9
     }
   ]
 }
