@@ -18,7 +18,7 @@ export class ProductService {
 			duration: 1500,
 			horizontalPosition: 'end',
 			verticalPosition: 'top',
-			panelClass: isError ? ['msg-success'] : ['msg-error'],
+			panelClass: isError ? ['msg-error'] : ['msg-success'],
 		});
 	}
 
@@ -29,18 +29,19 @@ export class ProductService {
 		);
 	}
 
-	ErrorHandler(e: any): Observable<any> {
-		this.showMessage('Ocorreu um erro!');
-		return EMPTY;
-	}
-
 	read(): Observable<Product[]> {
-		return this.http.get<Product[]>(this.baseUrl);
+		return this.http.get<Product[]>(this.baseUrl).pipe(
+			map((obj) => obj),
+			catchError((e) => this.ErrorHandler(e))
+		);
 	}
 
 	readById(id: string): Observable<Product> {
 		const url = `${this.baseUrl}/${id}`;
-		return this.http.get<Product>(url);
+		return this.http.get<Product>(url).pipe(
+			map((obj) => obj),
+			catchError((e) => this.ErrorHandler(e))
+		);
 	}
 
 	update(product: Product): Observable<Product> {
@@ -49,6 +50,14 @@ export class ProductService {
 	}
 	delete(id: string): Observable<Product> {
 		const url = `${this.baseUrl}/${id}`;
-		return this.http.delete<Product>(url);
+		return this.http.delete<Product>(url).pipe(
+			map((obj) => obj),
+			catchError((e) => this.ErrorHandler(e))
+		);
+	}
+
+	ErrorHandler(e: any): Observable<any> {
+		this.showMessage('Ocorreu um erro!', true);
+		return EMPTY;
 	}
 }

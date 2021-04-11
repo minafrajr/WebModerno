@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/product.model';
-import { ProductService } from '../../product/product.service';
+import { ProductService } from '../product.service';
 
 @Component({
 	selector: 'app-product-update',
@@ -28,7 +28,7 @@ export class ProductUpdateComponent implements OnInit {
 
 	UpdateProduct(): void {
 		this.productService.update(this.product).subscribe(() => {
-			this.productService.showMessage('Produto atualizado com sucesso!', true);
+			this.productService.showMessage('Produto atualizado com sucesso!');
 			this.router.navigate(['/products']);
 		});
 	}
