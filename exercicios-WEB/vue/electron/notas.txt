@@ -1,0 +1,16 @@
+https://github.com/cod3rcursos/youtube/tree/master/most-used-words
+
+//criar o projeto
+vue create nome-projeto
+
+//Verificar se o vue CLI está instalado
+npm i -g @vue/cli
+
+//adicionar o vuetify, biblioteca de componentes
+vue add vuetify
+
+//adicionar o electron
+vue add add electron-builder 
+
+//para executar
+npm run electron:serve
