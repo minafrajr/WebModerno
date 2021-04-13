@@ -1,10 +1,10 @@
 https://github.com/cod3rcursos/youtube/tree/master/most-used-words
 
-//criar o projeto
-vue create nome-projeto
-
 //Verificar se o vue CLI está instalado
 npm i -g @vue/cli
+
+//criar o projeto
+vue create nome-projeto
 
 //adicionar o vuetify, biblioteca de componentes
 vue add vuetify
