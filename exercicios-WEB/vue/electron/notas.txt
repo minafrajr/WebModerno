@@ -10,7 +10,8 @@ npm i -g @vue/cli
 vue add vuetify
 
 //adicionar o electron
-vue add add electron-builder 
+vue add electron-builder 
 
 //para executar
 npm run electron:serve
+yarn electron:serve
